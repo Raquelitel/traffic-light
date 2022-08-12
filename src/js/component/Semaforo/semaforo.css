@@ -9,3 +9,10 @@
   -moz-box-shadow: 10px 10px 74px 25px rgba(250, 210, 10, 1);
   box-shadow: 10px 10px 74px 25px rgba(250, 210, 10, 1);
 }
+
+.bg-esmeralda {
+  background-color: #3AF9AE;
+}
+.bg-violeta {
+  background-color: #B93AF9;
+}
