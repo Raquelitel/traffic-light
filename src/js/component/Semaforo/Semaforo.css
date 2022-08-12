@@ -1,0 +1,11 @@
+.luzSize {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.brillo {
+  -webkit-box-shadow: 10px 10px 74px 25px rgba(250, 210, 10, 1);
+  -moz-box-shadow: 10px 10px 74px 25px rgba(250, 210, 10, 1);
+  box-shadow: 10px 10px 74px 25px rgba(250, 210, 10, 1);
+}
