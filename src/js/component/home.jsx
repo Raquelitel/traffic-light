@@ -7,7 +7,7 @@ import PreHome from "./PreHome.jsx";
 
 const Home = () => {
 	return (
-		<div className="container d-flex">
+		<div>
 			<PreHome/>
 		</div>
 	);

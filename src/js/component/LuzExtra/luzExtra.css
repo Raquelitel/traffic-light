@@ -7,11 +7,17 @@
 }
 
 .bg-violeta {
-  background-color: #b93af9;
+  background-color: #be0dfb;
 }
 
 .luzExtraSize {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-  }
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.brilloExtra {
+  -webkit-box-shadow: 2px 11px 39px 3px rgba(250, 210, 10, 1);
+  -moz-box-shadow: 2px 11px 39px 3px rgba(250, 210, 10, 1);
+  box-shadow: 2px 11px 39px 3px rgba(250, 210, 10, 1);
+}

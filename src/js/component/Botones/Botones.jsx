@@ -1,6 +1,6 @@
 import React from "react";
 
-const Botones = ({cambiarColor, intervalo, apagar, activarVioleta, botonAdd}) => {
+const Botones = ({cambiarColor, automatico, apagar, activarVioleta, botonAdd}) => {
   return (
     <div className="container row">
       <button
@@ -13,7 +13,7 @@ const Botones = ({cambiarColor, intervalo, apagar, activarVioleta, botonAdd}) =>
       <button
         type="button"
         className="btn text-capitalize my-1 bg-esmeralda"
-        onClick={intervalo}
+        onClick={automatico}
       >
         automático
       </button>

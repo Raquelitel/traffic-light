@@ -3,34 +3,32 @@ import "./semaforo.css";
 import LuzExtra from "../LuzExtra/LuzExtra.jsx";
 
 const Semaforo = ({
+isColor,
+activarColor,
+isVioleta
 
-  isGreen,
-  activarGreen,
-  isRed,
-  activarRed,
-  isYellow,
-  activarYellow,
-  isVioleta,
 }) => {
   return (
     <>
-      <div className="bg-secondary containerSize position-relative">
+      <div className="bg-secondary position-relative containerSize">
         <div className="p-2">
-          <div
-            className={`border luzSize bg-success mx-auto my-2 ${isGreen ? "brillo" : "bg-opacity-50"}`}
-            onClick={activarGreen}
+          <div id="green"
+            className={`border luzSize bg-success mx-auto my-2 ${(isColor === "green") ? "brillo" : "bg-opacity-50"}`}
+            onClick={activarColor}
           ></div>
-          <div
-            className={`border luzSize bg-warning mx-auto my-2 ${isYellow ? "brillo" : "bg-opacity-50"}`}
-            onClick={activarYellow}
+          <div id="yellow"
+            className={`border luzSize bg-warning mx-auto my-2 ${(isColor === "yellow") ? "brillo" : "bg-opacity-50"}`}
+            onClick={activarColor}
           ></div>
-          <div
-            className={`border luzSize bg-danger mx-auto my-2 ${isRed ? "brillo" : "bg-opacity-50"}`}
-            onClick={activarRed}
+          <div id="red"
+            className={`border luzSize bg-danger mx-auto my-2 ${(isColor === "red") ? "brillo" : "bg-opacity-50"}`}
+            onClick={activarColor}
           ></div>
         </div>
       </div>
-      {isVioleta ? <LuzExtra/> : null}
+      {isVioleta ? <LuzExtra
+      isColor={isColor}
+      activarColor={activarColor}/> : null} 
     </> 
   );
 };

@@ -3,81 +3,35 @@ import Semaforo from "./Semaforo/Semaforo.jsx";
 import Botones from "./Botones/Botones.jsx";
 
 const PreHome = () => {
-
-  const [isGreen, setIsGreen] = useState(false);
-  const [isYellow, setIsYellow] = useState(false);
-  const [isRed, setIsRed] = useState(false);
-  const [isVioleta, setIsVioleta] = useState(false);
+  const [isColor, setIsColor] = useState("");
   const [isBotonAdd, setIsBotonAdd] = useState("Añadir");
-  const [isIntervalo, setIsIntervalo] = useState(false);
+  const [isVioleta, setIsVioleta] = useState(false);
+  const [isAutomatico, setIsAutomatico] = useState(false);
 
-  const activarGreen = () => {
-    setIsGreen(!isGreen);
-    setIsYellow(false);
-    setIsRed(false);
-  };
+  const colorLight = ["green", "yellow", "red"];
 
-  const activarYellow = () => {
-    setIsGreen(false);
-    setIsYellow(!isYellow);
-    setIsRed(false);
-  };
-
-  const activarRed = () => {
-    setIsGreen(false);
-    setIsYellow(false);
-    setIsRed(!isRed);
+  const activarColor = (e) => {
+    if (isColor === "") {
+      const clicked = e.target.id;
+      setIsColor(clicked);
+    } else {
+      setIsColor("");
+    }
   };
 
   const cambiarColor = () => {
-
-/*     if(isGreen) {
-      setIsGreen(activarGreen)
-      return 
-    } if {
-
-    } */
-    !isGreen ? setIsGreen(activarGreen) : null; 
-    console.log("linea 1");
-    isGreen ? setIsYellow(activarYellow) : null; 
-    console.log("linea 2");
-    isYellow ? setIsRed(activarRed) : null;
-    console.log("linea 3");
-    console.log(isGreen, isYellow, isRed);
-  }; 
-
-  const apagar = () => {
-    setIsGreen(false);
-    setIsYellow(false);
-    setIsRed(false);
-    setIsVioleta(false);
+    colorLight.forEach((color, i) => {
+      if (isColor === "green") {
+        setIsColor("yellow") 
+      } else if (isColor === "yellow") {
+        setIsColor("red") 
+      } else {setIsColor("green")}
+    });
   };
 
-
-/* 
-useEffect(()=>{
-  let pepito;
-  if(isIntervalo) {
-  pepito = setInterval(() => {cambiarColor(); }, 1000)
-
-  } else {clearInterval(pepito)}
-
-  return clearInterval(pepito)
-
-
-
-},[isIntervalo]) */
-  
-
-
-    const intervalo = () => {
-      setIsIntervalo(!isIntervalo);
-  
-      {isIntervalo ? (setInterval(() => {cambiarColor(); }, 3000)) : null}
-      console.log(isIntervalo)
-    };
-
-
+  const apagar = () => {
+    setIsColor("");
+  };
 
   const luzVioleta = () => {
     setIsVioleta(!isVioleta);
@@ -86,24 +40,44 @@ useEffect(()=>{
     }
   };
 
+  /*   useEffect(() => {
+    if (isAutomatico) {
+      let colorId = 0;
+      const colorLight = ["green", "yellow", "red"];
+      setInterval(() => {
+        if (colorId <= colorLight.length) {
+          setIsColor(colorLight(colorId));
+        } 
+      }, 1000);
+    }
+  }, [isAutomatico]);
+ */
+  const colorAutomatico = () => {
+    let colorId = 0;
+    setInterval(() => {
+      if (colorId <= colorLight.length) {
+        setIsColor(colorLight[colorId]);
+        colorId++;
+      } else {
+        return false;
+      }
+    }, 1000);
+  };
+
   return (
     <>
-      <div className="container row mt-5">
-        <div className="col-3">
+      <div className="container d-flex justify-content-center align-items-center mt-5">
+        <div>
           <Semaforo
-            isGreen={isGreen}
-            activarGreen={activarGreen}
-            isRed={isRed}
-            activarRed={activarRed}
-            isYellow={isYellow}
-            activarYellow={activarYellow}
+            isColor={isColor}
+            activarColor={activarColor}
             isVioleta={isVioleta}
           />
         </div>
-        <div className="col-3">
+        <div>
           <Botones
             cambiarColor={cambiarColor}
-            intervalo={intervalo}
+            automatico={colorAutomatico}
             apagar={apagar}
             activarVioleta={luzVioleta}
             botonAdd={isBotonAdd}
