@@ -3,6 +3,7 @@ import "./semaforo.css";
 import LuzExtra from "../LuzExtra/LuzExtra.jsx";
 
 const Semaforo = ({
+
   isGreen,
   activarGreen,
   isRed,
@@ -13,7 +14,7 @@ const Semaforo = ({
 }) => {
   return (
     <>
-      <div className="bg-secondary containerSize">
+      <div className="bg-secondary containerSize position-relative">
         <div className="p-2">
           <div
             className={`border luzSize bg-success mx-auto my-2 ${isGreen ? "brillo" : "bg-opacity-50"}`}
@@ -30,7 +31,7 @@ const Semaforo = ({
         </div>
       </div>
       {isVioleta ? <LuzExtra/> : null}
-    </>
+    </> 
   );
 };
 
