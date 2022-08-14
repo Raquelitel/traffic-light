@@ -66,7 +66,7 @@ const PreHome = () => {
 
   return (
     <>
-      <div className="container d-flex justify-content-center align-items-center mt-5">
+      <div className="d-flex flex-wrap justify-content-center align-items-center mt-5">
         <div>
           <Semaforo
             isColor={isColor}

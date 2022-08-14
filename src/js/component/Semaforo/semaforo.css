@@ -1,9 +1,17 @@
+/* contenedor */
+
+.bg-secondary {
+  background-color: #333434 !important
+}
+
 .containerSize {
   width: 10rem;
   height: 18rem;
   border-radius: 2rem;
   
 }
+
+/* luces */
 
 .luzSize {
   width: 5rem;
