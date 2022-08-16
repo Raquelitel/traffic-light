@@ -11,5 +11,5 @@
 
 ## Website
 
-[Enter and enjoy!](https://traffic-light-raquelitel.vercel.app/)
+[Click here and enjoy!](https://traffic-light-raquelitel.vercel.app/)
 
