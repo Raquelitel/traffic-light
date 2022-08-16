@@ -11,6 +11,6 @@
 
 ## Website
 
-[Click here and enjoy!](https://traffic-light-raquelitel.vercel.app/)
-<img src="https://traffic-light-raquelitel.vercel.app/"/>
+Click in this link and enjoy! [https://traffic-light-raquelitel.vercel.app/]
+
 
